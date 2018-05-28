@@ -1,0 +1,173 @@
+********************************************************
+Windows 7 Ultimate Security Setup
+********************************************************
+Author: Saulo S. Ortiz
+Date: 20180103
+
+INTRODUCTION:
+These steps will latch down Windows 7 in a way that will seem overly paranoid. If you're planning to stream from the computer
+you're going to do these changes to, then know that streaming will not work after these steps are set. These steps are
+for a brand new Windows setup without that has no security updates. Additionally, these steps will lock down all automatic updates.
+I do this because updates not only fix problems but create new security issues making remote connectivity easier for government agencies with each security patch.
+
+DOWNLOADS:
+1. Firefox (no higher than 56.0 if you plan to torrent).
+2. NoScript add-on for FF.
+3. Bluhell add-on for FF.
+4. Self-destructing cookies add-on for FF.
+5. Better-privacy add-on for FF.
+6. Avast A/V downloads from Swedish website also get the latest signature file.
+7. Glasswire 1.2 or latest.
+8. Track Eraser Pro (oldie but goodie...not free).
+9. CCleaner v5.10.5373…from China but we’ll block it.
+10. Wise Registry cleaner…also from China.
+11. Bleachbit.
+12. Keyscrambler for FF (not addon) Filehippo.com.
+13. Toolwiz timefreeze 2017 (do not install this one until EVERYTHING has been done!)
+
+MODIFICATION
+In these steps we'll modify the Windows Firewall rules, Firefox and Windows startup services..but not right now.
+
+INSTALL:
+All installations must be done OFFLINE!...disconnect the cat5 cable, turn of your NIC through the taskbar or Control Panel > Network Sharing.
+Everytime Glasswire alerts you, you need to stop the connection by clicking on the FIRE icon.
+
+DO NOT BLOCK:
+  a. Host Process for Windows Services
+  b. Firefox
+  c. Spooler SubSystem App
+
+1. Make sure you are OFFLINE!!! Cannot stress this enough!
+
+2. Start installing software but NOT AT THE SAME TIME...some programs will require rebooting.
+
+3. Run Avast and under UPDATE cancel all automatic updates and under SETTINGS select MANUAL UPDATE. You will need to update manually by downloading
+the signature files yourself. Do this every month or so. Also get them from the Swedish website or any European website where files are more secure due
+to higher privacy laws.
+
+4. Several things need to happen in CCleaner:
+  a. Go to OPTIONS > SETTINGS and UNCHECK Run CCleaner when the computer starts and also Automatically check for updates.
+  b. While there go to MONITORING and UNCHECK Enable system monitoring and Enable Active Monitoring.
+  c. Go to TOOLS > STARTUP, click on ENABLE to sort it by YES and NO and DISABLE all programs like Adobe, MS Office, iTunes, etc. DO NOT DISABLE:
+    1. Glasswire
+    2. Sidebar
+    3. Avast
+    4. Keyscrambler
+    5. Track Eraser
+    6. ToolwizTimerFreeze
+    7. Any other programs you really want running after bootup
+  d. Go to REGISTRY and run a SCAN FOR ISSUES then FIX any issues...we'll be back to CCleaner later
+
+5. Run Firefox and type about:config...we'll install the updates once we're back ONLINE
+  a. Select I accept the risk and continue
+  b. Search for PEER and change it to FALSE
+  c. Search for NAV and also change it to FALSE
+  d. Search for UPDATE and change all to FALSE
+  d. Never use Chrome...EVER!
+
+6. Go to:
+  a. CONTROL PANEL > WINDOWS FIREWALL > ADVANCE SETTINGS
+  b. Select OUTBOUND RULES
+  c. Click on the PROFILE column to sort by PROFILES
+  d. Select all DOMAIN and click on DISABLE RULES
+  e. Select all PUBLIC and click on DISABLE RULES
+  f. Under PRIVATE and disable
+    1. NETWORK DISCOVERY
+    2. REMOTE ASSISTANCE
+    3. WINDOWS MEDIA PLAYER
+    4. CONNECT TO A NETWORK PROJECTOR
+    5. Any ICMPv6
+  g. Under ALL look for any of the above mentioned and:
+    1. WINDOWS PORTABLE DEVICES
+    2. WINDOWS PEER TO PEER COLLABORATION
+    3. WINDOWS MEDIA PLAYER
+  h. If you have an NVIDIA card DISABLE the SHIELD if you don't own one
+
+7. While in FIREWALL:
+  a. Select INBOUND RULES
+  b. Click on the PROFILE column to sort by PROFILES
+  c. Select all DOMAIN and click on DISABLE RULES
+  d. Select all PUBLIC and click on DISABLE RULES
+  e. Under PRIVATE DISABLE:
+    1. All of the same from above
+    2. iSCSI Service
+    3. Anything that reads RPC
+    4. Distributed Transaction Coordinator
+    5. SNMP Trap Services
+    6. Windows Management Instrumentation
+    7. Performance Logs and Alerts
+
+8. Create Firewall rules to block ports commonly used by hackers:
+  a. 445
+  b. 135-139
+  c. 1900
+  d. Google for additional ports and use nmap to check what ports are still open after all is done.
+
+9. Before we close Firewall right click on Windows Firewall with Advance and EXPORT POLICY...Save the file.
+
+10. At the WINDOWS SEARCH PROMPT type services and select SERVICES and sort by STARTUP TYPE. DISABLE the following:
+  a. Adobe Acrobat
+  b. ASP .NET
+  c. Fax
+  d. Internet Connection Sharing
+  e. Media Center Extender
+  f. Microsoft .NET Framework
+  g. Net.Msmq Listener Adapter
+  h. Net.Pipe Listener Adapter
+  i. Net.Tco Listener Adapter
+  j. Offline files
+  k. Parental Controls
+  l. Any REMOTE services you find
+  m. Routing and Remote Access
+  n. Secondary Logon
+  o. Security Center
+  p. Smart card
+  q. Table PC Input
+  r. Telephony
+  s. Windows Biometric
+  t. Windows Error Reporting
+  u. Windows Remote Management
+  v. Windows Update
+
+Any other service you think is suspicious to have ON while using a DESKTOP computer. Some of these may be needed for MOBILE computers.
+
+11. Again in the WINDOWS SEARCH PROMPT, select the BOOT tab then click on the ADVANCE OPTIONS... button. Make sure all your PROCESSOR are being used and MAXIMUM memory.
+
+12. While there go to the SERVICES tab and sort by STATUS. Make sure all SERVICES you do not want are STOPPED.
+
+13. Go to STARTUP tab and UNCHECK any other services you missed with CCleaner.
+
+14. Go ONLINE and keep an eye out for Glasswire and its alerts. Start blocking connections out you do not want. PS, If you open WINDOWS EXPLORER and live it open for a while it will also
+try to connect to somewhere. BLOCK IT!
+
+FYI...Glasswire will start populating new Firewall rules for you when you block something.
+
+15. Open FIREFOX and go to www.expressvpn.com/webrtc-leak-test and see the results for WebRTC leaks. Changing the PEER and NAV settings should have stopped that. Google what WebRTC leaks are.
+
+16. While in FIREFOX go to SETTINGS > ADD-ONS and search and install the add-one mentioned at the beginning.
+
+17. Torrent for Track Eraser or buy it.
+
+18. Right click on the Internet Connection icon on the Taskbar. Then OPEN NETWORK AND SHARING CENTER > CHANGE ADAPTER SETTINGS.
+  a. Right click on the LOCAL AREA CONNECTION and select CREATE A SHORTCUT
+  b. Use it to TURN OFF your NIC
+
+19. Now that you're OFFLINE run
+  a. CCleaner REGISTRY CLEANER option and FIX any issues
+  b. Wise Registry Cleaner and do the same...this one captures more stuff
+  c. BleachBit and select all BUT NOT FREE DISK SPACE...you may need to LOGOFF or REBOOT
+
+20. Install TimeFreeze and select the directories you DO NOT want frozen. This way you can add or delete files from it without having to turn it off everytime.
+
+After TimeFreeze is set, you will need to play around with folders and files NOT to FREEZE. You will also need to SHOW HIDDEN FILES from Control Panel to see certain folders that are hidden.
+
+-------------------------------------------------------------------
+Additional Notes:
+1. You will have to turn OFF TimeFreeze for anything you think you will need to update like AVAST....for me that is the only thing I update and I do so manually not through AVAST but I download the
+updated signatures every month or so and do the update OFFLINE.
+
+2. If you need to install new software you need to do so OFFLINE and with TimeFreeze temporarily OFF.
+
+3. Make sure you install all other software by the time TimeFreeze is set.
+
+4. To do backups do so OFFLINE and TimeFreeze OFF...then turn it ON again.
