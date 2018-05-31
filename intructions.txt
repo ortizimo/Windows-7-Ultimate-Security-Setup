@@ -168,7 +168,7 @@ Note: Research any other service you think is suspicious or you don't understand
 -----------------------------------------
 INSTALLATION (ONLINE):
 -----------------------------------------
-14. Go ONLINE and keep an eye out for Glasswire and ANY alerts. Start blocking connections going out you do not want.
+14. Go ONLINE and keep an eye out for Glasswire and ANY alerts. Start blocking outgoing connections you do not want.
 
 Note:
   a. PS, If you open WINDOWS EXPLORER and leave it open for a while it will also try to connect to somewhere. BLOCK IT!!!!
