@@ -200,5 +200,3 @@ ADDITIONAL NOTES:
 3. If you need to install new software you need to do so OFFLINE and with ToolwizTimerFreeze temporarily OFF.
 4. Make sure you install all other software BEFORE ToolwizTimerFreeze is installed.
 5. To do backups do so OFFLINE and with ToolwizTimerFreeze OFF. Once backup finishes turn ToolwizTimerFreeze ON again.
-
-~Security is NOT convenient...Convenience is NOT security~
