@@ -3,69 +3,76 @@ Windows 7 Ultimate Security Setup
 ********************************************************
 Author: Saulo S. Ortiz
 Date: 20180103
+Updated: 20180530
 
 INTRODUCTION:
-These steps will latch down Windows 7 in a way that will seem overly paranoid. If you're planning to stream from the computer
-you're going to do these changes to, then know that streaming will not work after these steps are set. These steps are
-for a brand new Windows setup without that has no security updates. Additionally, these steps will lock down all automatic updates.
-I do this because updates not only fix problems but create new security issues making remote connectivity easier for government agencies with each security patch.
+-----------------------------------------
+These steps will help you latch down Windows 7 in a way that will seem overly paranoid. If you're planning to stream from the computer
+you're going to do these changes to, then know that streaming will not work after these steps are set. These steps are for a brand new
+Windows installation that has no security updates or patches. Additionally, these steps will lock down all automatic updates. I do this
+because updates not only "fix" problems but also create new security holes making remote connectivity and data siphoning easier for
+government agencies to do.
 
 DOWNLOADS:
+-----------------------------------------
 1. Firefox (no higher than 56.0 if you plan to torrent).
-2. NoScript add-on for FF.
-3. Bluhell add-on for FF.
-4. Self-destructing cookies add-on for FF.
-5. Better-privacy add-on for FF.
+2. NoScript add-on for Firefox.
+3. Bluhell add-on for Firefox.
+4. Self-destructing cookies add-on for Firefox.
+5. Better-privacy add-on for Firefox.
 6. Avast A/V downloads from Swedish website also get the latest signature file.
 7. Glasswire 1.2 or latest.
 8. Track Eraser Pro (oldie but goodie...not free).
 9. CCleaner v5.10.5373…from China but we’ll block it.
 10. Wise Registry cleaner…also from China.
-11. Bleachbit.
-12. Keyscrambler for FF (not addon) Filehippo.com.
-13. Toolwiz timefreeze 2017 (do not install this one until EVERYTHING has been done!)
+11. BleachBit.
+12. Keyscrambler for Firefox (not add-on...Filehippo.com).
+13. ToolwizTimerFreeze 2017 (do not install this one until EVERYTHING else has been done!)
 
-MODIFICATION
-In these steps we'll modify the Windows Firewall rules, Firefox and Windows startup services..but not right now.
-
-INSTALL:
-All installations must be done OFFLINE!...disconnect the cat5 cable, turn of your NIC through the taskbar or Control Panel > Network Sharing.
-Everytime Glasswire alerts you, you need to stop the connection by clicking on the FIRE icon.
-
-DO NOT BLOCK:
+NOTES:
+1. All installations must be done OFFLINE!...disconnect your cat5 cable, turn of your NIC through the Taskbar or Control Panel > Network Sharing.
+2. Everytime Glasswire alerts you, you need to stop the connection by clicking on the FIRE icon next to the program that is calling out.
+3. In Glasswire do not block:
   a. Host Process for Windows Services
   b. Firefox
   c. Spooler SubSystem App
+4. These steps will modify the Windows Firewall rules, Firefox and Windows startup services.
 
-1. Make sure you are OFFLINE!!! Cannot stress this enough!
+-----------------------------------------
+INSTALLATION (OFFLINE):
+-----------------------------------------
+1. Make sure you are OFFLINE!!! I cannot stress this enough!
 
-2. Start installing software but NOT AT THE SAME TIME...some programs will require rebooting.
+2. Start installing software but NOT AT THE SAME TIME...some programs will require rebooting. DO NOT INSTALL ToolwizTimerFreeze YET!
+
+Note: If you have another Anti-virus then leave it or replace it with Avast but DO NOT HAVE TWO!
 
 3. Run Avast and under UPDATE cancel all automatic updates and under SETTINGS select MANUAL UPDATE. You will need to update manually by downloading
 the signature files yourself. Do this every month or so. Also get them from the Swedish website or any European website where files are more secure due
-to higher privacy laws.
+to stronger privacy laws.
 
 4. Several things need to happen in CCleaner:
-  a. Go to OPTIONS > SETTINGS and UNCHECK Run CCleaner when the computer starts and also Automatically check for updates.
-  b. While there go to MONITORING and UNCHECK Enable system monitoring and Enable Active Monitoring.
+  a. Go to OPTIONS > SETTINGS and UNCHECK "Run CCleaner when the computer starts" and also "Automatically check for updates."
+  b. While there go to MONITORING and UNCHECK "Enable system monitoring" and also UNCHECK "Enable Active Monitoring."
   c. Go to TOOLS > STARTUP, click on ENABLE to sort it by YES and NO and DISABLE all programs like Adobe, MS Office, iTunes, etc. DO NOT DISABLE:
     1. Glasswire
     2. Sidebar
-    3. Avast
+    3. Avast or other A/V
     4. Keyscrambler
-    5. Track Eraser
-    6. ToolwizTimerFreeze
+    5. Track Eraser (not free)
+    6. ToolwizTimerFreeze (not yet installed)
     7. Any other programs you really want running after bootup
-  d. Go to REGISTRY and run a SCAN FOR ISSUES then FIX any issues...we'll be back to CCleaner later
+  d. Go to REGISTRY and run a SCAN FOR ISSUES then FIX any issues...close CCleaner from the Taskbar
 
-5. Run Firefox and type about:config...we'll install the updates once we're back ONLINE
-  a. Select I accept the risk and continue
-  b. Search for PEER and change it to FALSE
-  c. Search for NAV and also change it to FALSE
-  d. Search for UPDATE and change all to FALSE
-  d. Never use Chrome...EVER!
+5. Run Firefox and type "about:config"...we'll install the updates once we're back ONLINE!
+  a. Select "I accept the risk" and continue
+  b. Search for PEER and change it to "FALSE"
+  c. Search for NAV and also change it to "FALSE"
+  d. Search for UPDATE and change all to "FALSE"
 
-6. Go to:
+Note: Do not use Chrome...you can change the settings just like Firefox but its too intrusive and retains all your searches under your gmail/google account.
+
+6. In Windows go to:
   a. CONTROL PANEL > WINDOWS FIREWALL > ADVANCE SETTINGS
   b. Select OUTBOUND RULES
   c. Click on the PROFILE column to sort by PROFILES
@@ -77,11 +84,11 @@ to higher privacy laws.
     3. WINDOWS MEDIA PLAYER
     4. CONNECT TO A NETWORK PROJECTOR
     5. Any ICMPv6
-  g. Under ALL look for any of the above mentioned and:
+  g. Under "ALL" look for any of the above mentioned and DISABLE:
     1. WINDOWS PORTABLE DEVICES
     2. WINDOWS PEER TO PEER COLLABORATION
     3. WINDOWS MEDIA PLAYER
-  h. If you have an NVIDIA card DISABLE the SHIELD if you don't own one
+  h. If you have an NVIDIA card DISABLE "SHIELD" if you don't own one
 
 7. While in FIREWALL:
   a. Select INBOUND RULES
@@ -96,16 +103,28 @@ to higher privacy laws.
     5. SNMP Trap Services
     6. Windows Management Instrumentation
     7. Performance Logs and Alerts
+    8. Windows Firewall Remote Management
+    9. Routing and Remote Access
+    10. Remote Service Management
+    11. Remote Volume Management
+
+Note: DISABLE anything that reads REMOTE (RPC).
 
 8. Create Firewall rules to block ports commonly used by hackers:
   a. 445
   b. 135-139
   c. 1900
-  d. Google for additional ports and use nmap to check what ports are still open after all is done.
+  d. Google for additional ports and use nmap to check what ports are still open after all is done
 
-9. Before we close Firewall right click on Windows Firewall with Advance and EXPORT POLICY...Save the file.
+Note: You can make a single rule with all the ports you need closed.
 
-10. At the WINDOWS SEARCH PROMPT type services and select SERVICES and sort by STARTUP TYPE. DISABLE the following:
+9. Before we close Firewall RIGHT CLICK on Windows Firewall with Advance Security on Local Computer then "EXPORT POLICY..." and save the file somewhere else.
+
+Note: Every time you want a program blocked or a port closed or you block a program using Glasswire, you will have to export the profile. Then commonly
+inconvenience is that the profile will NOT be saved as long as ToolwizTimerFreeze is running. Therefore you will need to turn off ToolwizTimerFreeze
+then IMPORT the exported profile and finally TURN ON ToolwizTimerFreeze.
+
+10. At the WINDOWS SEARCH PROMPT type "services" and select SERVICES and sort by STARTUP TYPE. DISABLE the following:
   a. Adobe Acrobat
   b. ASP .NET
   c. Fax
@@ -115,59 +134,71 @@ to higher privacy laws.
   g. Net.Msmq Listener Adapter
   h. Net.Pipe Listener Adapter
   i. Net.Tco Listener Adapter
-  j. Offline files
-  k. Parental Controls
-  l. Any REMOTE services you find
-  m. Routing and Remote Access
-  n. Secondary Logon
-  o. Security Center
-  p. Smart card
-  q. Table PC Input
-  r. Telephony
-  s. Windows Biometric
-  t. Windows Error Reporting
-  u. Windows Remote Management
-  v. Windows Update
+  j. NVIDIA Telemetry
+  k. Offline files
+  l. Parental Controls
+  m. Any REMOTE (RPC) services you find (there's two you cannot disable)
+  n. Routing and Remote Access
+  o. Secondary Logon
+  p. Security Center
+  q. Smart card
+  r. Table PC Input
+  s. Telephony
+  t. Windows Biometric
+  u. Windows Error Reporting
+  v. Windows Remote Management
+  w. Windows Update
 
-Any other service you think is suspicious to have ON while using a DESKTOP computer. Some of these may be needed for MOBILE computers.
+Note: Research any other service you think is suspicious or you don't understand. Some of these may be needed for MOBILE computers.
 
-11. Again in the WINDOWS SEARCH PROMPT, select the BOOT tab then click on the ADVANCE OPTIONS... button. Make sure all your PROCESSOR are being used and MAXIMUM memory.
+11. Again under WINDOWS SEARCH PROMPT, select the BOOT tab then click on the ADVANCE OPTIONS... button. Make sure all your CORE PROCESSORS are being used and also MAXIMUM memory.
 
-12. While there go to the SERVICES tab and sort by STATUS. Make sure all SERVICES you do not want are STOPPED.
+12. While there go to the SERVICES tab and sort by STATUS. Make sure all SERVICES you do not want are STOPPED and UNCHECKED.
 
-13. Go to STARTUP tab and UNCHECK any other services you missed with CCleaner.
+13. Go to STARTUP tab and UNCHECK any other services you missed with CCleaner. Create a new FIREWALL RULE and STOP CCleaner from connecting OUTBOUND.
 
-14. Go ONLINE and keep an eye out for Glasswire and its alerts. Start blocking connections out you do not want. PS, If you open WINDOWS EXPLORER and live it open for a while it will also
-try to connect to somewhere. BLOCK IT!
+-----------------------------------------
+INSTALLATION (ONLINE):
+-----------------------------------------
+14. Go ONLINE and keep an eye out for Glasswire and ANY alerts. Start blocking connections going out you do not want.
 
-FYI...Glasswire will start populating new Firewall rules for you when you block something.
+Note:
+  a. PS, If you open WINDOWS EXPLORER and leave it open for a while it will also try to connect to somewhere. BLOCK IT!!!!
+  b. You will have to block, export Firewall profile and IMPORT again until all programs STOP trying to connect out.
+  c. FYI...Glasswire will start populating new Firewall rules for you when you block something.
 
 15. Open FIREFOX and go to www.expressvpn.com/webrtc-leak-test and see the results for WebRTC leaks. Changing the PEER and NAV settings should have stopped that. Google what WebRTC leaks are.
 
 16. While in FIREFOX go to SETTINGS > ADD-ONS and search and install the add-one mentioned at the beginning.
-
-17. Torrent for Track Eraser or buy it.
+  a. NoScript
+  b. Bluhell
+  c. Self-destructing cookies
+  d. Better-privacy
 
 18. Right click on the Internet Connection icon on the Taskbar. Then OPEN NETWORK AND SHARING CENTER > CHANGE ADAPTER SETTINGS.
-  a. Right click on the LOCAL AREA CONNECTION and select CREATE A SHORTCUT
-  b. Use it to TURN OFF your NIC
+  a. Right click on the LOCAL AREA CONNECTION and select CREATE A SHORTCUT to your Desktop
+  b. Use it to TURN OFF your NIC NOW
 
-19. Now that you're OFFLINE run
+19. Now that you're OFFLINE again run:
   a. CCleaner REGISTRY CLEANER option and FIX any issues
   b. Wise Registry Cleaner and do the same...this one captures more stuff
   c. BleachBit and select all BUT NOT FREE DISK SPACE...you may need to LOGOFF or REBOOT
 
-20. Install TimeFreeze and select the directories you DO NOT want frozen. This way you can add or delete files from it without having to turn it off everytime.
+Note: The registry cleaning programs may delete the port rules.
 
-After TimeFreeze is set, you will need to play around with folders and files NOT to FREEZE. You will also need to SHOW HIDDEN FILES from Control Panel to see certain folders that are hidden.
+20. Everything at this point should be ready to go. Install ToolwizTimerFreeze and select the directories you DO NOT want "frozen". This way you can add or delete files to them without having to turn
+the program off every time.
 
--------------------------------------------------------------------
-Additional Notes:
-1. You will have to turn OFF TimeFreeze for anything you think you will need to update like AVAST....for me that is the only thing I update and I do so manually not through AVAST but I download the
-updated signatures every month or so and do the update OFFLINE.
+Note: After ToolwizTimerFreeze is set, you will need to play around with folders and files NOT to FREEZE. This is the tricky part. You will also need to SHOW HIDDEN FILES from Control Panel to see certain
+folders that are hidden.
 
-2. If you need to install new software you need to do so OFFLINE and with TimeFreeze temporarily OFF.
 
-3. Make sure you install all other software by the time TimeFreeze is set.
+ADDITIONAL NOTES:
+-----------------------------------------
+1. You will have to turn OFF ToolwizTimerFreeze for any update like in AVAST A/V or installing or removing programs.
+2. Updating the A/V is the only thing I do so manually and not through the A/V itself. I download the updated signatures every month or so and do the update OFFLINE with ToolwizTimerFreeze off.
+3. If you need to install new software you need to do so OFFLINE and with ToolwizTimerFreeze temporarily OFF.
+4. Make sure you install all other software BEFORE ToolwizTimerFreeze is installed.
+5. To do backups do so OFFLINE and with ToolwizTimerFreeze OFF. Once backup finishes turn ToolwizTimerFreeze ON again.
 
-4. To do backups do so OFFLINE and TimeFreeze OFF...then turn it ON again.
+~Security is NOT convenient...Convenience is NOT security~
