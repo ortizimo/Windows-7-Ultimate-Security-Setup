@@ -2,8 +2,16 @@
 Windows 7 Ultimate Security Setup
 ********************************************************
 Author: Saulo S. Ortiz
-Date: 20180103
+Date: 20180107
 Updated: 20180530
+
+DISCLAIMER:
+-----------------------------------------
+I have been perfecting these steps since Windows 7 came out and through trial and error I've come up with the best way to modify and secure
+Windows 7. With that said, I am NOT responsible for any data corruption or any damage these steps may cause. I have not had any damaged hardware
+if you're wondering, but I've had data corruption so BACK-UP what you don't want to lose.
+
+Additionally, I have tried these steps under Windows 8 and 8.1 but NOT Windows 10.
 
 INTRODUCTION:
 -----------------------------------------
