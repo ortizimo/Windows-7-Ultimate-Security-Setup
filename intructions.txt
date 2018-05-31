@@ -141,7 +141,7 @@ then IMPORT the exported profile and finally TURN ON ToolwizTimerFreeze.
   f. Microsoft .NET Framework
   g. Net.Msmq Listener Adapter
   h. Net.Pipe Listener Adapter
-  i. Net.Tco Listener Adapter
+  i. Net.Tcp Listener Adapter
   j. NVIDIA Telemetry
   k. Offline files
   l. Parental Controls
