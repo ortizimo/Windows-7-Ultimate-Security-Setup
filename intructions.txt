@@ -1,9 +1,10 @@
-********************************************************
-Windows 7 Ultimate Security Setup
-********************************************************
+﻿********************************************************
+Straightforward Training™
+Windows 7 Ultimate Security Setup (Paranoid Mode)
 Author: Saulo S. Ortiz
 Date: 20180107
-Updated: 20180530
+Updated: 20180531
+********************************************************
 
 DISCLAIMER:
 -----------------------------------------
@@ -200,6 +201,9 @@ the program off every time.
 Note: After ToolwizTimerFreeze is set, you will need to play around with folders and files NOT to FREEZE. This is the tricky part. You will also need to SHOW HIDDEN FILES from Control Panel to see certain
 folders that are hidden.
 
+FINAL NOTE:
+TURN OFF your NIC...then use ToolwizTimerFreeze to lock everything in its sandbox. You can then turn on your PC and not worry about data going out while its in idle and you don't need to be online.
+
 
 ADDITIONAL NOTES:
 -----------------------------------------
@@ -208,3 +212,4 @@ ADDITIONAL NOTES:
 3. If you need to install new software you need to do so OFFLINE and with ToolwizTimerFreeze temporarily OFF.
 4. Make sure you install all other software BEFORE ToolwizTimerFreeze is installed.
 5. To do backups do so OFFLINE and with ToolwizTimerFreeze OFF. Once backup finishes turn ToolwizTimerFreeze ON again.
+6. Research online for GODMODE and have a shortcut for it. See what else you can find you don't need running.
