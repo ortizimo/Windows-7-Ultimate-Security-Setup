@@ -3,7 +3,7 @@ Straightforward Training™
 Windows 7 Ultimate Security Setup (Paranoid Mode)
 Author: Saulo S. Ortiz
 Date: 20180107
-Updated: 20180531
+Updated: 20180610
 ********************************************************
 
 DISCLAIMER:
@@ -48,7 +48,7 @@ NOTES:
 4. These steps will modify the Windows Firewall rules, Firefox and Windows startup services.
 
 -----------------------------------------
-INSTALLATION (OFFLINE):
+SETUP (OFFLINE):
 -----------------------------------------
 1. Make sure you are OFFLINE!!! I cannot stress this enough!
 
@@ -167,35 +167,43 @@ Note: Research any other service you think is suspicious or you don't understand
 13. Go to STARTUP tab and UNCHECK any other services you missed with CCleaner. Create a new FIREWALL RULE and STOP CCleaner from connecting OUTBOUND.
 
 -----------------------------------------
-INSTALLATION (ONLINE):
+Turn OFF Windows Updates (OFFLINE)
 -----------------------------------------
-14. Go ONLINE and keep an eye out for Glasswire and ANY alerts. Start blocking outgoing connections you do not want.
+1. While still OFFLINE, go to Control Panel > Windows updates
+2. Click on Change SETTINGS
+3. Select NEVER CHECK FOR UPDATES
+4. Uncheck any boxes
+
+-----------------------------------------
+SETUP (ONLINE):
+-----------------------------------------
+1. Go ONLINE and keep an eye out for Glasswire and ANY alerts. Start blocking outgoing connections you do not want.
 
 Note:
   a. PS, If you open WINDOWS EXPLORER and leave it open for a while it will also try to connect to somewhere. BLOCK IT!!!!
   b. You will have to block, export Firewall profile and IMPORT again until all programs STOP trying to connect out.
   c. FYI...Glasswire will start populating new Firewall rules for you when you block something.
 
-15. Open FIREFOX and go to www.expressvpn.com/webrtc-leak-test and see the results for WebRTC leaks. Changing the PEER and NAV settings should have stopped that. Google what WebRTC leaks are.
+2. Open FIREFOX and go to www.expressvpn.com/webrtc-leak-test and see the results for WebRTC leaks. Changing the PEER and NAV settings should have stopped that. Google what WebRTC leaks are.
 
-16. While in FIREFOX go to SETTINGS > ADD-ONS and search and install the add-one mentioned at the beginning.
+3. While in FIREFOX go to SETTINGS > ADD-ONS and search and install the add-one mentioned at the beginning.
   a. NoScript
   b. Bluhell
   c. Self-destructing cookies
   d. Better-privacy
 
-18. Right click on the Internet Connection icon on the Taskbar. Then OPEN NETWORK AND SHARING CENTER > CHANGE ADAPTER SETTINGS.
+4. Right click on the Internet Connection icon on the Taskbar. Then OPEN NETWORK AND SHARING CENTER > CHANGE ADAPTER SETTINGS.
   a. Right click on the LOCAL AREA CONNECTION and select CREATE A SHORTCUT to your Desktop
   b. Use it to TURN OFF your NIC NOW
 
-19. Now that you're OFFLINE again run:
+5. Now that you're OFFLINE again run:
   a. CCleaner REGISTRY CLEANER option and FIX any issues
   b. Wise Registry Cleaner and do the same...this one captures more stuff
   c. BleachBit and select all BUT NOT FREE DISK SPACE...you may need to LOGOFF or REBOOT
 
 Note: The registry cleaning programs may delete the port rules.
 
-20. Everything at this point should be ready to go. Install ToolwizTimerFreeze and select the directories you DO NOT want "frozen". This way you can add or delete files to them without having to turn
+6. Everything at this point should be ready to go. Install ToolwizTimerFreeze and select the directories you DO NOT want "frozen". This way you can add or delete files to them without having to turn
 the program off every time.
 
 Note: After ToolwizTimerFreeze is set, you will need to play around with folders and files NOT to FREEZE. This is the tricky part. You will also need to SHOW HIDDEN FILES from Control Panel to see certain
@@ -203,7 +211,7 @@ folders that are hidden.
 
 FINAL NOTE:
 TURN OFF your NIC...then use ToolwizTimerFreeze to lock everything in its sandbox. You can then turn on your PC and not worry about data going out while its in idle and you don't need to be online.
-
+This way you can use your computer but no data will be going out or coming in while you work OFFLINE.
 
 ADDITIONAL NOTES:
 -----------------------------------------
