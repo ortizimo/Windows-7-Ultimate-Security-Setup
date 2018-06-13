@@ -3,7 +3,7 @@ Straightforward Training™
 Windows 7 Ultimate Security Setup (Paranoid Mode)
 Author: Saulo S. Ortiz
 Date: 20180107
-Updated: 20180610
+Updated: 20180613
 ********************************************************
 
 DISCLAIMER:
@@ -12,7 +12,7 @@ I have been perfecting these steps since Windows 7 came out and through trial an
 Windows 7. With that said, I am NOT responsible for any data corruption or any damage these steps may cause. I have not had any damaged hardware
 if you're wondering, but I've had data corruption so BACK-UP what you don't want to lose.
 
-Additionally, I have tried these steps under Windows 8 and 8.1 but NOT Windows 10.
+I've tried these steps under Windows 7, 8 and 8.1 but NOT Windows 10.
 
 INTRODUCTION:
 -----------------------------------------
@@ -39,13 +39,13 @@ DOWNLOADS:
 13. ToolwizTimerFreeze 2017 (do not install this one until EVERYTHING else has been done!)
 
 NOTES:
-1. All installations must be done OFFLINE!...disconnect your cat5 cable, turn of your NIC through the Taskbar or Control Panel > Network Sharing.
-2. Everytime Glasswire alerts you, you need to stop the connection by clicking on the FIRE icon next to the program that is calling out.
-3. In Glasswire do not block:
-  a. Host Process for Windows Services
-  b. Firefox
-  c. Spooler SubSystem App
-4. These steps will modify the Windows Firewall rules, Firefox and Windows startup services.
+  1. All installations must be done OFFLINE!...disconnect your cat5 cable, turn of your NIC through the Taskbar or Control Panel > Network Sharing.
+  2. Every time Glasswire alerts you, you need to stop the connection by clicking on the FIRE icon next to the program that is calling out.
+  3. In Glasswire do not block:
+    a. Host Process for Windows Services
+    b. Firefox
+    c. Spooler SubSystem App
+  4. These steps will modify the Windows Firewall rules, Firefox and Windows startup services.
 
 -----------------------------------------
 SETUP (OFFLINE):
@@ -69,7 +69,7 @@ to stronger privacy laws.
     3. Avast or other A/V
     4. Keyscrambler
     5. Track Eraser (not free)
-    6. ToolwizTimerFreeze (not yet installed)
+    6. ToolwizTimerFreeze (install last)
     7. Any other programs you really want running after bootup
   d. Go to REGISTRY and run a SCAN FOR ISSUES then FIX any issues...close CCleaner from the Taskbar
 
@@ -79,7 +79,9 @@ to stronger privacy laws.
   c. Search for NAV and also change it to "FALSE"
   d. Search for UPDATE and change all to "FALSE"
 
-Note: Do not use Chrome...you can change the settings just like Firefox but its too intrusive and retains all your searches under your gmail/google account.
+Note:
+  a. Do not use Chrome...you can change the settings just like Firefox but its too intrusive and retains all your searches under your gmail/google account.
+  b. If you have trouble watching online videos then tinker with the NAV or PEER settings.
 
 6. In Windows go to:
   a. CONTROL PANEL > WINDOWS FIREWALL > ADVANCE SETTINGS
@@ -127,13 +129,23 @@ Note: DISABLE anything that reads REMOTE (RPC).
 
 Note: You can make a single rule with all the ports you need closed.
 
-9. Before we close Firewall RIGHT CLICK on Windows Firewall with Advance Security on Local Computer then "EXPORT POLICY..." and save the file somewhere else.
+FIREFOX RULES (Optional)
+9. If you want to keep an older version of Firefox for Torrent purposes then add the following rules to the OUTBOUND
+Rules in the Firewall, Block the following files in c:\Program Files:
+  a. Updater
+  b. Ping Sender
+  c. Mini Dump Analyzer
+  d. Maintenance Installer
+  e. Maintenance Services
+  f. Crash Reporter
+
+10. Before we close Firewall RIGHT CLICK on Windows Firewall with Advance Security on Local Computer then "EXPORT POLICY..." and save the file somewhere else.
 
 Note: Every time you want a program blocked or a port closed or you block a program using Glasswire, you will have to export the profile. Then commonly
 inconvenience is that the profile will NOT be saved as long as ToolwizTimerFreeze is running. Therefore you will need to turn off ToolwizTimerFreeze
 then IMPORT the exported profile and finally TURN ON ToolwizTimerFreeze.
 
-10. At the WINDOWS SEARCH PROMPT type "services" and select SERVICES and sort by STARTUP TYPE. DISABLE the following:
+11. At the WINDOWS SEARCH PROMPT type "services" and select SERVICES and sort by STARTUP TYPE. DISABLE the following:
   a. Adobe Acrobat
   b. ASP .NET
   c. Fax
@@ -160,11 +172,11 @@ then IMPORT the exported profile and finally TURN ON ToolwizTimerFreeze.
 
 Note: Research any other service you think is suspicious or you don't understand. Some of these may be needed for MOBILE computers.
 
-11. Again under WINDOWS SEARCH PROMPT, select the BOOT tab then click on the ADVANCE OPTIONS... button. Make sure all your CORE PROCESSORS are being used and also MAXIMUM memory.
+12. Again under WINDOWS SEARCH PROMPT, select the BOOT tab then click on the ADVANCE OPTIONS... button. Make sure all your CORE PROCESSORS are being used and also MAXIMUM memory.
 
-12. While there go to the SERVICES tab and sort by STATUS. Make sure all SERVICES you do not want are STOPPED and UNCHECKED.
+13. While there go to the SERVICES tab and sort by STATUS. Make sure all SERVICES you do not want are STOPPED and UNCHECKED.
 
-13. Go to STARTUP tab and UNCHECK any other services you missed with CCleaner. Create a new FIREWALL RULE and STOP CCleaner from connecting OUTBOUND.
+14. Go to STARTUP tab and UNCHECK any other services you missed with CCleaner. Create a new FIREWALL RULE and STOP CCleaner from connecting OUTBOUND.
 
 -----------------------------------------
 Turn OFF Windows Updates (OFFLINE)
@@ -206,12 +218,13 @@ Note: The registry cleaning programs may delete the port rules.
 6. Everything at this point should be ready to go. Install ToolwizTimerFreeze and select the directories you DO NOT want "frozen". This way you can add or delete files to them without having to turn
 the program off every time.
 
-Note: After ToolwizTimerFreeze is set, you will need to play around with folders and files NOT to FREEZE. This is the tricky part. You will also need to SHOW HIDDEN FILES from Control Panel to see certain
-folders that are hidden.
+Note:
+  a. After ToolwizTimerFreeze is set, you will need to play around with folders and files that you want to keep changing "NOT FREEZE".
+  b. This is the tricky part. You will also need to SHOW HIDDEN FILES from Control Panel to see certain folders that are hidden.
 
 FINAL NOTE:
-TURN OFF your NIC...then use ToolwizTimerFreeze to lock everything in its sandbox. You can then turn on your PC and not worry about data going out while its in idle and you don't need to be online.
-This way you can use your computer but no data will be going out or coming in while you work OFFLINE.
+  a. TURN OFF your NIC...then use ToolwizTimerFreeze to lock everything in its sandbox. You can then turn on your PC and not worry about data going out while its in idle and you don't need to be online.
+  b. This way you can use your computer but no data will be going out or coming in while you work OFFLINE.
 
 ADDITIONAL NOTES:
 -----------------------------------------
