@@ -3,7 +3,7 @@ Straightforward Training™
 Windows 7 Ultimate Security Setup (Paranoid Mode)
 Author: Saulo S. Ortiz
 Date: 20180107
-Updated: 20180613
+Updated: 20200802
 ********************************************************
 
 DISCLAIMER:
@@ -36,16 +36,17 @@ DOWNLOADS:
 10. Wise Registry cleaner…also from China.
 11. BleachBit.
 12. Keyscrambler for Firefox (not add-on...Filehippo.com).
-13. ToolwizTimerFreeze 2017 (do not install this one until EVERYTHING else has been done!)
+13. *ToolwizTimerFreeze 2017 (do not install this one until EVERYTHING else has been done!)
 
 NOTES:
   1. All installations must be done OFFLINE!...disconnect your cat5 cable, turn of your NIC through the Taskbar or Control Panel > Network Sharing.
   2. Every time Glasswire alerts you, you need to stop the connection by clicking on the FIRE icon next to the program that is calling out.
   3. In Glasswire do not block:
-    a. Host Process for Windows Services
-    b. Firefox
-    c. Spooler SubSystem App
+      a. Host Process for Windows Services
+      b. Firefox
+      c. Spooler SubSystem App
   4. These steps will modify the Windows Firewall rules, Firefox and Windows startup services.
+  5. *Shadow Defender 1.4.0 is better than ToolwizTimerFreeze if you can find a free version
 
 -----------------------------------------
 SETUP (OFFLINE):
@@ -69,7 +70,7 @@ to stronger privacy laws.
     3. Avast or other A/V
     4. Keyscrambler
     5. Track Eraser (not free)
-    6. ToolwizTimerFreeze (install last)
+    6. ToolwizTimerFreeze (install last!!!)
     7. Any other programs you really want running after bootup
   d. Go to REGISTRY and run a SCAN FOR ISSUES then FIX any issues...close CCleaner from the Taskbar
 
@@ -232,5 +233,8 @@ ADDITIONAL NOTES:
 2. Updating the A/V is the only thing I do so manually and not through the A/V itself. I download the updated signatures every month or so and do the update OFFLINE with ToolwizTimerFreeze off.
 3. If you need to install new software you need to do so OFFLINE and with ToolwizTimerFreeze temporarily OFF.
 4. Make sure you install all other software BEFORE ToolwizTimerFreeze is installed.
-5. To do backups do so OFFLINE and with ToolwizTimerFreeze OFF. Once backup finishes turn ToolwizTimerFreeze ON again.
-6. Research online for GODMODE and have a shortcut for it. See what else you can find you don't need running.
+5. To create Restore Points or do backups do so while OFFLINE and with ToolwizTimerFreeze OFF and removed from the Taskbar. Once backup finishes turn ToolwizTimerFreeze ON again.
+6. Do research online for Windows GODMODE. Copy the code line, Create a shortcut and rename it using that code.
+7. Create a shortcut of your NIC. I recommend to always work offline.
+8. Some folders need to be excluded for updating like My Documents, Picture, Downloads and other folders are hidden like Bookmarks for Firefox in AppData\Roaming.
+9. To unhide folders go to Control Panel > Folder Options > View Tab > Show hidden files and folders.
